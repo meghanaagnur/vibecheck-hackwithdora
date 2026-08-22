@@ -1,0 +1,21 @@
+{
+  "name": "@vibecheck/backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unified backend for VibeCheck",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "server": "node src/server.js",
+    "test:fixture": "node src/extract.js --fixture ../fixtures/test-cases/login-page",
+    "test": "node test/e2e.test.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "playwright": "^1.47.0"
+  }
+}

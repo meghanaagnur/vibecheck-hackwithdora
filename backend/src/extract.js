@@ -204,7 +204,7 @@ export async function extract(htmlOrPath, options = {}) {
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1]);
 if (isMain) {
   const args = process.argv.slice(2);
-  let target = path.resolve(process.cwd(), "../../fixtures/test-cases/login-page");
+  let target = path.resolve(process.cwd(), "../fixtures/test-cases/login-page");
   const fixtureIndex = args.indexOf("--fixture");
   if (fixtureIndex !== -1 && args[fixtureIndex + 1]) {
     target = path.resolve(process.cwd(), args[fixtureIndex + 1]);
