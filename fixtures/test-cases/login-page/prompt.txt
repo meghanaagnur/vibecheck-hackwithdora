@@ -1,0 +1,1 @@
+login page: email input, password input, blue submit button 24px below input
