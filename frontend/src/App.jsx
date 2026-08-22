@@ -1,6 +1,54 @@
+import { useState } from "react";
 import UploadPage from "./pages/UploadPage.jsx";
+import ResultsPage from "./pages/ResultsPage.jsx";
 
-// TODO: swap for a router once ResultsPage exists (Day 1, hours 2-10).
 export default function App() {
-  return <UploadPage />;
+  const [view, setView] = useState("upload"); // 'upload' | 'results'
+  const [diffResult, setDiffResult] = useState(null);
+  const [previousDiffResult, setPreviousDiffResult] = useState(null);
+  const [submissionContext, setSubmissionContext] = useState({
+    prompt: "",
+    code: "",
+    useAgent: false,
+  });
+
+  const handleCheckSuccess = (diff, context) => {
+    setDiffResult(diff);
+    setPreviousDiffResult(null);
+    if (context) {
+      setSubmissionContext(context);
+    }
+    setView("results");
+  };
+
+  const handleRetrySuccess = (newDiff) => {
+    // Keep the pre-retry diff in previousDiffResult for before/after comparison
+    setPreviousDiffResult(diffResult);
+    setDiffResult(newDiff);
+  };
+
+  const handleStartOver = () => {
+    setDiffResult(null);
+    setPreviousDiffResult(null);
+    setView("upload");
+  };
+
+  return (
+    <div className="app-container">
+      {view === "upload" ? (
+        <UploadPage
+          onCheckSuccess={handleCheckSuccess}
+          initialValues={submissionContext}
+        />
+      ) : (
+        <ResultsPage
+          diff={diffResult}
+          previousDiff={previousDiffResult}
+          submissionContext={submissionContext}
+          onRetrySuccess={handleRetrySuccess}
+          onStartOver={handleStartOver}
+        />
+      )}
+    </div>
+  );
 }
