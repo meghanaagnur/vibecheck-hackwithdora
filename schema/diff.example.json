@@ -1,0 +1,29 @@
+{
+  "diffVersion": "1.0",
+  "summary": {
+    "totalChecked": 2,
+    "mismatches": 1,
+    "status": "mismatch"
+  },
+  "results": [
+    {
+      "elementId": "el-0",
+      "matchedExtractionId": "dom-1",
+      "verdict": "match",
+      "checks": [],
+      "boundingBox": { "x": 240, "y": 120, "width": 300, "height": 40 },
+      "note": "Matches spec."
+    },
+    {
+      "elementId": "el-1",
+      "matchedExtractionId": "dom-2",
+      "verdict": "position_mismatch",
+      "checks": [
+        { "field": "backgroundColor", "expected": "#2563EB", "actual": "#2563eb", "pass": true },
+        { "field": "position.offsetPx", "expected": 24, "actual": 41, "pass": false, "deltaPx": 17 }
+      ],
+      "boundingBox": { "x": 240, "y": 201, "width": 118, "height": 41 },
+      "note": "Button is 17px lower than spec'd (24px expected)."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "checklistVersion": "1.0",
+  "sourcePrompt": "login page: email input, password input, blue submit button 24px below input",
+  "elements": [
+    {
+      "id": "el-0",
+      "type": "input",
+      "role": "email",
+      "expected": {
+        "text": null,
+        "color": null,
+        "backgroundColor": null,
+        "position": null,
+        "size": null,
+        "alignment": null
+      }
+    },
+    {
+      "id": "el-1",
+      "type": "button",
+      "role": "submit",
+      "expected": {
+        "text": "Sign in",
+        "color": "#FFFFFF",
+        "backgroundColor": "#2563EB",
+        "position": {
+          "relativeTo": "el-0",
+          "direction": "below",
+          "offsetPx": 24
+        },
+        "size": {
+          "widthPx": 120,
+          "heightPx": 40
+        },
+        "alignment": "center"
+      }
+    }
+  ]
+}

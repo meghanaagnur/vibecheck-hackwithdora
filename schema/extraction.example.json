@@ -1,0 +1,33 @@
+{
+  "extractionVersion": "1.0",
+  "screenshot": "data:image/png;base64,PLACEHOLDER",
+  "viewport": { "width": 1280, "height": 800 },
+  "elements": [
+    {
+      "id": "dom-1",
+      "tag": "input",
+      "text": "",
+      "boundingBox": { "x": 240, "y": 120, "width": 300, "height": 40 },
+      "computedStyle": {
+        "color": "#111111",
+        "backgroundColor": "#ffffff",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      "attributes": { "alt": null, "ariaLabel": null, "role": null }
+    },
+    {
+      "id": "dom-2",
+      "tag": "button",
+      "text": "Sign in",
+      "boundingBox": { "x": 240, "y": 201, "width": 118, "height": 41 },
+      "computedStyle": {
+        "color": "#ffffff",
+        "backgroundColor": "#2563eb",
+        "fontSize": "16px",
+        "fontWeight": "600"
+      },
+      "attributes": { "alt": null, "ariaLabel": null, "role": null }
+    }
+  ]
+}

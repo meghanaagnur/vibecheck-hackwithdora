@@ -1,0 +1,14 @@
+{
+  "name": "@vibecheck/checklist-diff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claude-powered checklist generation, code-gen agent, and diff engine for VibeCheck",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0"
+  }
+}

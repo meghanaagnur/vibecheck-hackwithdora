@@ -1,0 +1,15 @@
+{
+  "name": "@vibecheck/render-extract",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright-based render + DOM extraction service for VibeCheck",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test:fixture": "node src/index.js --fixture ../../fixtures/test-cases/login-page"
+  },
+  "dependencies": {
+    "playwright": "^1.47.0"
+  }
+}
