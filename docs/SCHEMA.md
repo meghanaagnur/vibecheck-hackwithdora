@@ -138,7 +138,10 @@ screen — it should never have to look at checklist.json or extraction.json dir
     "attempted": true,
     "previousDiffSummary": { "totalChecked": 4, "mismatches": 2 },
     "resultAfterRetry": { "totalChecked": 4, "mismatches": 1 }
-  }
+  },
+  "promptSuggestions": [                // optional — plain-English prompt-rewrite hints
+    "For \"el-1\": specify the exact spacing as 24px."
+  ]
 }
 ```
 
@@ -151,6 +154,10 @@ Rules:
   freely without touching this file.
 - `retry` block is only added by the diff engine on the second pass; frontend must treat
   its absence as "no retry has happened yet," not as an error.
+- `promptSuggestions` is derived deterministically from `results[].checks` (see
+  `backend/src/promptCoach.js`) — never a second AI call, so it can never suggest
+  something the diff itself didn't actually find. Empty array (not omitted) when
+  `summary.status === "match"`.
 
 ---
 

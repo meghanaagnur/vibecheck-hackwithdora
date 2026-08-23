@@ -1244,6 +1244,58 @@ body {
   line-height: 1.4;
 }
 
+/* ===================== Prompt suggestions panel ===================== */
+
+.prompt-suggestions-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin: 16px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.prompt-suggestions-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.prompt-suggestions-header h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.prompt-suggestions-lede {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.prompt-suggestions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prompt-suggestions-list li {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.prompt-suggestions-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
 /* ===================== Landing page ===================== */
 
 .landing-page {

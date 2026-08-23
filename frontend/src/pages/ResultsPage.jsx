@@ -2,6 +2,7 @@ import { useState } from "react";
 import SummaryBanner from "../components/SummaryBanner.jsx";
 import OverlayCanvas, { VERDICT_CONFIG } from "../components/OverlayCanvas.jsx";
 import RetryBeforeAfter from "../components/RetryBeforeAfter.jsx";
+import PromptSuggestions from "../components/PromptSuggestions.jsx";
 import { retryCheck } from "../lib/api.js";
 import { SAMPLE_RETRY_DIFF } from "../lib/sampleFixtures.js";
 
@@ -124,6 +125,9 @@ export default function ResultsPage({
 
       {/* Summary Banner */}
       <SummaryBanner summary={diff.summary} retry={diff.retry} />
+
+      {/* Prompt-coaching: what the prompt under-specified, before offering the AI fix */}
+      <PromptSuggestions suggestions={diff.promptSuggestions} />
 
       {/* Primary Visual Verification View */}
       <main className="results-main-content">

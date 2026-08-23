@@ -8,6 +8,7 @@ import { generateChecklist } from "./checklist.js";
 import { diff } from "./diff.js";
 import { generateCode, regenerateWithFeedback } from "./codegen.js";
 import { extract } from "./extract.js";
+import { suggestPromptImprovements } from "./promptCoach.js";
 
 // Load environment variables
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -73,6 +74,7 @@ export function createApp() {
       // Attach screenshot and code for frontend consumers
       diffResult.screenshot = extraction.screenshot;
       diffResult.code = targetCode;
+      diffResult.promptSuggestions = suggestPromptImprovements(diffResult);
 
       res.json(diffResult);
     } catch (err) {
@@ -133,6 +135,7 @@ export function createApp() {
       newDiffResult.screenshot = newExtraction.screenshot;
       newDiffResult.code = newCode;
       newDiffResult.previousCode = previousCode;
+      newDiffResult.promptSuggestions = suggestPromptImprovements(newDiffResult);
 
       res.json(newDiffResult);
     } catch (err) {
