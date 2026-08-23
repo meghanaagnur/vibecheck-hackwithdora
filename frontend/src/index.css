@@ -51,11 +51,9 @@
   --radius-xl: 18px;
 
   --gradient-blob:
-    radial-gradient(ellipse 55% 45% at 12% 8%, rgba(251, 207, 232, 0.55), transparent 60%),
-    radial-gradient(ellipse 50% 42% at 88% 12%, rgba(199, 210, 254, 0.5), transparent 60%),
-    radial-gradient(ellipse 48% 42% at 50% 50%, rgba(191, 219, 254, 0.42), transparent 60%),
-    radial-gradient(ellipse 52% 45% at 15% 92%, rgba(253, 224, 130, 0.28), transparent 60%),
-    radial-gradient(ellipse 48% 42% at 90% 88%, rgba(216, 180, 254, 0.38), transparent 60%);
+    radial-gradient(ellipse 55% 50% at 25% 15%, rgba(251, 207, 232, 0.55), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 78% 8%, rgba(199, 210, 254, 0.5), transparent 60%),
+    radial-gradient(ellipse 45% 40% at 55% 55%, rgba(191, 219, 254, 0.4), transparent 60%);
 }
 
 *, *::before, *::after {
