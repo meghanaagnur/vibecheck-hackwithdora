@@ -84,7 +84,25 @@ export const SAMPLE_DIFF = {
     totalChecked: 4,
     mismatches: 2,
     status: "mismatch"
-  }
+  },
+  accessibilityIssues: [
+    {
+      elementId: "dom1",
+      tag: "input",
+      issue: "missing-accessible-name",
+      severity: "error",
+      message: "input has no visible text and no aria-label — screen readers can't announce what it does.",
+    },
+    {
+      elementId: "dom3",
+      tag: "button",
+      issue: "low-contrast",
+      severity: "warning",
+      message: "Text/background contrast is 3.98:1, below the 4.5:1 WCAG AA minimum for normal text.",
+    },
+  ],
+  code: `<button class="submit-button" style="margin-top:41px;">Sign in</button>`,
+  previousCode: `<button class="submit-button" style="margin-top:41px;">Sign in</button>`,
 };
 
 export const SAMPLE_RETRY_DIFF = {
@@ -127,5 +145,8 @@ export const SAMPLE_RETRY_DIFF = {
     attempted: true,
     previousDiffSummary: { totalChecked: 4, mismatches: 2 },
     resultAfterRetry: { totalChecked: 3, mismatches: 0 }
-  }
+  },
+  accessibilityIssues: [],
+  code: `<button class="submit-button" style="margin-top:24px; margin-left:auto; margin-right:auto; display:block;" aria-label="Sign in">Sign in</button>`,
+  previousCode: `<button class="submit-button" style="margin-top:41px;">Sign in</button>`,
 };

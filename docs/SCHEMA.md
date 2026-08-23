@@ -141,7 +141,19 @@ screen — it should never have to look at checklist.json or extraction.json dir
   },
   "promptSuggestions": [                // optional — plain-English prompt-rewrite hints
     "For \"el1\": specify the exact spacing as 24px."
-  ]
+  ],
+  "accessibilityIssues": [              // optional — static a11y checks, see backend/src/accessibility.js
+    {
+      "elementId": "dom3",              // extraction element id, NOT a checklist id
+      "tag": "img",
+      "issue": "missing-alt",           // missing-alt | missing-accessible-name | low-contrast
+      "severity": "error",              // error | warning
+      "message": "Image has no alt text — screen readers can't describe it."
+    }
+  ],
+  "screenshot": "data:image/png;base64,...", // full-page screenshot, copied from extraction.json
+  "code": "<html>...</html>",                 // the code that was actually rendered
+  "previousCode": "<html>...</html>"          // retry responses only — the code before the fix
 }
 ```
 
@@ -158,6 +170,14 @@ Rules:
   `backend/src/promptCoach.js`) — never a second AI call, so it can never suggest
   something the diff itself didn't actually find. Empty array (not omitted) when
   `summary.status === "match"`.
+- `accessibilityIssues` is derived deterministically from the same `extraction.json`
+  data the diff engine already has (see `backend/src/accessibility.js`) — no extra
+  render pass. Deliberately small scope: missing `alt`, missing accessible name on
+  interactive elements, and WCAG AA color contrast. Always present as an array
+  (possibly empty), never omitted.
+- `screenshot`, `code`, and `previousCode` are attached by `server.js`, not by the
+  diff engine itself — `code` is whatever was actually rendered (agent-generated or
+  pasted), `previousCode` only appears on `/retry` responses.
 
 ---
 

@@ -3,6 +3,8 @@ import SummaryBanner from "../components/SummaryBanner.jsx";
 import OverlayCanvas, { VERDICT_CONFIG } from "../components/OverlayCanvas.jsx";
 import RetryBeforeAfter from "../components/RetryBeforeAfter.jsx";
 import PromptSuggestions from "../components/PromptSuggestions.jsx";
+import AccessibilityPanel from "../components/AccessibilityPanel.jsx";
+import CodeDiffView from "../components/CodeDiffView.jsx";
 import { retryCheck } from "../lib/api.js";
 import { SAMPLE_RETRY_DIFF } from "../lib/sampleFixtures.js";
 
@@ -129,13 +131,19 @@ export default function ResultsPage({
       {/* Prompt-coaching: what the prompt under-specified, before offering the AI fix */}
       <PromptSuggestions suggestions={diff.promptSuggestions} />
 
+      {/* Accessibility: static alt text / accessible name / contrast checks */}
+      <AccessibilityPanel issues={diff.accessibilityIssues} />
+
       {/* Primary Visual Verification View */}
       <main className="results-main-content">
         {hasRetry ? (
-          <RetryBeforeAfter
-            previousDiff={previousDiff || diff}
-            currentDiff={diff}
-          />
+          <>
+            <RetryBeforeAfter
+              previousDiff={previousDiff || diff}
+              currentDiff={diff}
+            />
+            <CodeDiffView before={diff.previousCode} after={diff.code} />
+          </>
         ) : (
           <section className="overlay-section">
             <div className="section-header-row">

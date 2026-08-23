@@ -9,6 +9,7 @@ import { diff } from "./diff.js";
 import { generateCode, regenerateWithFeedback } from "./codegen.js";
 import { extract } from "./extract.js";
 import { suggestPromptImprovements } from "./promptCoach.js";
+import { runAccessibilityChecks } from "./accessibility.js";
 
 // Load environment variables
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -75,6 +76,7 @@ export function createApp() {
       diffResult.screenshot = extraction.screenshot;
       diffResult.code = targetCode;
       diffResult.promptSuggestions = suggestPromptImprovements(diffResult);
+      diffResult.accessibilityIssues = runAccessibilityChecks(extraction);
 
       res.json(diffResult);
     } catch (err) {
@@ -136,6 +138,7 @@ export function createApp() {
       newDiffResult.code = newCode;
       newDiffResult.previousCode = previousCode;
       newDiffResult.promptSuggestions = suggestPromptImprovements(newDiffResult);
+      newDiffResult.accessibilityIssues = runAccessibilityChecks(newExtraction);
 
       res.json(newDiffResult);
     } catch (err) {
