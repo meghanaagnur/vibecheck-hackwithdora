@@ -61,6 +61,13 @@
   padding: 0;
 }
 
+/* Browsers apply their own UI font to form controls by default (not "inherit"),
+   so every button/input/select/textarea needs this explicitly or it silently
+   falls back off Inter regardless of what body declares. */
+button, input, select, textarea, optgroup {
+  font-family: inherit;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-primary);
