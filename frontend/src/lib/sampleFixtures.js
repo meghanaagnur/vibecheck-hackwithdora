@@ -1,30 +1,31 @@
 // Sample fixture data for demo / test runs when backend is in development or offline
 import sampleDiffJson from "../../../schema/diff.example.json";
 
-// A clean mockup SVG screenshot for demo visualization
+// A clean mockup SVG screenshot for demo visualization, matching the site's light theme
 const SAMPLE_SCREENSHOT_SVG = `data:image/svg+xml;utf8,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <rect width="100%" height="100%" fill="#0f172a"/>
+  <rect width="100%" height="100%" fill="#f7f7f8"/>
   <!-- Browser Chrome Mockup -->
-  <rect width="100%" height="40" fill="#1e293b"/>
-  <circle cx="24" cy="20" r="6" fill="#ef4444"/>
-  <circle cx="44" cy="20" r="6" fill="#f59e0b"/>
-  <circle cx="64" cy="20" r="6" fill="#10b981"/>
-  <rect x="100" y="8" width="600" height="24" rx="4" fill="#0f172a"/>
-  <text x="110" y="24" fill="#64748b" font-family="sans-serif" font-size="12">https://app.preview/login</text>
-  
+  <rect width="100%" height="40" fill="#ffffff"/>
+  <rect width="100%" height="40" fill="none" stroke="#e5e5e7" stroke-width="1"/>
+  <circle cx="24" cy="20" r="6" fill="#dc2626"/>
+  <circle cx="44" cy="20" r="6" fill="#d97706"/>
+  <circle cx="64" cy="20" r="6" fill="#059669"/>
+  <rect x="100" y="8" width="600" height="24" rx="4" fill="#f7f7f8"/>
+  <text x="110" y="24" fill="#71717a" font-family="sans-serif" font-size="12">https://app.preview/login</text>
+
   <!-- Content Mockup -->
-  <rect x="200" y="70" width="400" height="380" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-  <text x="240" y="110" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="20">Sign in to your account</text>
-  
+  <rect x="200" y="70" width="400" height="380" rx="12" fill="#ffffff" stroke="#e5e5e7" stroke-width="1"/>
+  <text x="240" y="110" fill="rgba(0,0,0,0.875)" font-family="sans-serif" font-weight="bold" font-size="20">Sign in to your account</text>
+
   <!-- Email Input (x: 240, y: 120, w: 300, h: 40) -->
-  <rect x="240" y="130" width="320" height="40" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-  <text x="252" y="155" fill="#94a3b8" font-family="sans-serif" font-size="14">name@example.com</text>
-  
+  <rect x="240" y="130" width="320" height="40" rx="6" fill="#f7f7f8" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="252" y="155" fill="#71717a" font-family="sans-serif" font-size="14">name@example.com</text>
+
   <!-- Password Input (x: 240, y: 186, w: 320, h: 40) -->
-  <rect x="240" y="186" width="320" height="40" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
-  <text x="252" y="211" fill="#94a3b8" font-family="sans-serif" font-size="14">••••••••••••</text>
-  
+  <rect x="240" y="186" width="320" height="40" rx="6" fill="#f7f7f8" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="252" y="211" fill="#71717a" font-family="sans-serif" font-size="14">••••••••••••</text>
+
   <!-- Submit Button (x: 240, y: 250, w: 120, h: 40) -->
   <rect x="240" y="250" width="120" height="40" rx="6" fill="#2563eb"/>
   <text x="275" y="275" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="14">Sign in</text>
