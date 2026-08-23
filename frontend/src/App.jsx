@@ -34,11 +34,14 @@ export default function App() {
     setView("upload");
   };
 
+  // LandingPage is full-bleed (its own nav/section/footer own their width + padding),
+  // while Upload/Results stay inside the centered, padded app-container.
+  if (view === "landing") {
+    return <LandingPage onTryItClick={() => setView("upload")} />;
+  }
+
   return (
     <div className="app-container">
-      {view === "landing" && (
-        <LandingPage onTryItClick={() => setView("upload")} />
-      )}
       {view === "upload" && (
         <UploadPage
           onCheckSuccess={handleCheckSuccess}
