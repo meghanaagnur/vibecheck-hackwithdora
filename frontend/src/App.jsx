@@ -1,9 +1,10 @@
 import { useState } from "react";
+import LandingPage from "./pages/LandingPage.jsx";
 import UploadPage from "./pages/UploadPage.jsx";
 import ResultsPage from "./pages/ResultsPage.jsx";
 
 export default function App() {
-  const [view, setView] = useState("upload"); // 'upload' | 'results'
+  const [view, setView] = useState("landing"); // 'landing' | 'upload' | 'results'
   const [diffResult, setDiffResult] = useState(null);
   const [previousDiffResult, setPreviousDiffResult] = useState(null);
   const [submissionContext, setSubmissionContext] = useState({
@@ -35,12 +36,16 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {view === "upload" ? (
+      {view === "landing" && (
+        <LandingPage onTryItClick={() => setView("upload")} />
+      )}
+      {view === "upload" && (
         <UploadPage
           onCheckSuccess={handleCheckSuccess}
           initialValues={submissionContext}
         />
-      ) : (
+      )}
+      {view === "results" && (
         <ResultsPage
           diff={diffResult}
           previousDiff={previousDiffResult}
