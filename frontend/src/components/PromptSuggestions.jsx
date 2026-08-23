@@ -7,7 +7,6 @@ export default function PromptSuggestions({ suggestions = [] }) {
   return (
     <div className="prompt-suggestions-panel">
       <div className="prompt-suggestions-header">
-        <span className="prompt-suggestions-icon">💡</span>
         <h3>Sharpen your prompt</h3>
       </div>
       <p className="prompt-suggestions-lede">

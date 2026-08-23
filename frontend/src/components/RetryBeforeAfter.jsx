@@ -13,7 +13,7 @@ export default function RetryBeforeAfter({ previousDiff, currentDiff }) {
     <div className="retry-before-after-section">
       <div className="section-title-row">
         <h2 className="section-title">
-          <span className="sparkle-icon">✨</span> AI Retry Comparison (Before vs After)
+          AI Retry Comparison (Before vs After)
         </h2>
         <span className="diff-improvement-badge">
           {fixedCount > 0

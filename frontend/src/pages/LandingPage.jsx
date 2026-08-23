@@ -108,7 +108,7 @@ export default function LandingPage({ onTryItClick }) {
                 <span className="del">margin-top: 41px;</span>
                 {"\n"}
                 <span className="ins">margin-top: 24px;</span>
-                {"\n\n"}💡 Sharpen your prompt:{"\n"}state the exact spacing as 24px.
+                {"\n\n"}Sharpen your prompt:{"\n"}state the exact spacing as 24px.
               </div>
             </div>
           </div>

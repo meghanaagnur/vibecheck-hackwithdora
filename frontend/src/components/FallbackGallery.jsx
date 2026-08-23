@@ -23,7 +23,6 @@ export default function FallbackGallery({ onSelect }) {
   return (
     <div className="fallback-gallery">
       <div className="gallery-header">
-        <span className="gallery-icon">📁</span>
         <h4>Validated Demo Fixtures</h4>
       </div>
       <div className="gallery-grid">

@@ -44,7 +44,7 @@ export default function SummaryBanner({ summary, retry }) {
         <div className="banner-description">
           <strong>{summary.totalChecked}</strong> elements checked,{" "}
           <strong>{summary.mismatches}</strong> {summary.mismatches === 1 ? "mismatch" : "mismatches"} found
-          {retryDiffNote && <span className="retry-highlight"> · ✨ {retryDiffNote}</span>}.
+          {retryDiffNote && <span className="retry-highlight"> · {retryDiffNote}</span>}.
         </div>
       </div>
 

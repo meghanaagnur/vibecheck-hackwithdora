@@ -3,33 +3,33 @@ import { useState } from "react";
 // Verdict color and metadata mapping per docs/SCHEMA.md
 export const VERDICT_CONFIG = {
   match: {
-    color: "#10b981", // Green
-    bg: "rgba(16, 185, 129, 0.16)",
-    border: "2px solid #10b981",
+    color: "#059669", // Green — matches --color-match
+    bg: "rgba(5, 150, 105, 0.14)",
+    border: "2px solid #059669",
     label: "Match",
     icon: "✓",
     badgeClass: "badge-match",
   },
   position_mismatch: {
-    color: "#f59e0b", // Yellow/Amber
-    bg: "rgba(245, 158, 11, 0.20)",
-    border: "2px dashed #f59e0b",
+    color: "#d97706", // Amber — matches --color-mismatch
+    bg: "rgba(217, 119, 6, 0.16)",
+    border: "2px dashed #d97706",
     label: "Position Mismatch",
     icon: "⚠",
     badgeClass: "badge-mismatch",
   },
   style_mismatch: {
-    color: "#f59e0b", // Yellow/Amber
-    bg: "rgba(245, 158, 11, 0.20)",
-    border: "2px dashed #f59e0b",
+    color: "#d97706", // Amber — matches --color-mismatch
+    bg: "rgba(217, 119, 6, 0.16)",
+    border: "2px dashed #d97706",
     label: "Style Mismatch",
-    icon: "🎨",
+    icon: "⚠",
     badgeClass: "badge-mismatch",
   },
   missing: {
-    color: "#ef4444", // Red
-    bg: "rgba(239, 68, 68, 0.20)",
-    border: "2px solid #ef4444",
+    color: "#dc2626", // Red — matches --color-missing
+    bg: "rgba(220, 38, 38, 0.16)",
+    border: "2px solid #dc2626",
     label: "Missing Element",
     icon: "✕",
     badgeClass: "badge-missing",

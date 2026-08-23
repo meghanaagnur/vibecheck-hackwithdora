@@ -22,7 +22,6 @@
   --accent-ink: rgba(0, 0, 0, 0.95);
   --accent-ink-hover: #000000;
   --accent-gradient: linear-gradient(135deg, #171717 0%, #3f3f3f 100%);
-  --sparkle-gradient: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
 
   --color-match: #059669;
   --color-match-bg: rgba(5, 150, 105, 0.10);
@@ -499,8 +498,8 @@ body {
 }
 
 .pill-retry {
-  background: rgba(168, 85, 247, 0.14);
-  color: #7e22ce;
+  background: rgba(79, 70, 229, 0.12);
+  color: var(--accent-primary-hover);
 }
 
 .banner-description {
@@ -509,7 +508,7 @@ body {
 }
 
 .retry-highlight {
-  color: #7e22ce;
+  color: var(--accent-primary-hover);
   font-weight: 600;
 }
 
@@ -621,9 +620,9 @@ body {
 }
 
 .retry-status-badge {
-  background: rgba(168, 85, 247, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  color: #7e22ce;
+  background: rgba(79, 70, 229, 0.10);
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  color: var(--accent-primary-hover);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 6px 14px;

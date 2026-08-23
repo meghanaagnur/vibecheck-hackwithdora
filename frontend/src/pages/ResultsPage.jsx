@@ -96,7 +96,7 @@ export default function ResultsPage({
                   <span className="spinner"></span> AI Regenerating (Single Pass Retry)...
                 </span>
               ) : (
-                "✨ Run AI Fix (Single Pass Retry)"
+                "Run AI Fix (Single Pass Retry)"
               )}
             </button>
           )}
