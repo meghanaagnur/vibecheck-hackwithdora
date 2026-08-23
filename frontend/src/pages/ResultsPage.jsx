@@ -74,7 +74,9 @@ export default function ResultsPage({
         </button>
 
         <div className="nav-title-group">
-          <span className="nav-logo">VibeCheck Results</span>
+          <span className="nav-logo">
+            <span aria-hidden="true">✦</span> VibeCheck <span className="nav-logo-page">Results</span>
+          </span>
           {submissionContext.prompt && (
             <span className="prompt-preview-pill" title={submissionContext.prompt}>
               Spec: "{submissionContext.prompt.slice(0, 45)}..."

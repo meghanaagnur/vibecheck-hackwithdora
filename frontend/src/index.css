@@ -333,14 +333,14 @@ body {
 }
 
 .btn-retry {
-  background: var(--sparkle-gradient);
+  background: var(--accent-gradient);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(217, 70, 239, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
 }
 
 .btn-retry:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 
 .btn-ghost-sm {
@@ -420,24 +420,24 @@ body {
    ========================================================================== */
 
 .summary-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 20px 24px;
   margin-bottom: 28px;
   display: flex;
   align-items: center;
   gap: 20px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
 }
 
 .banner-success {
-  background: linear-gradient(90deg, rgba(5, 150, 105, 0.10) 0%, rgba(5, 150, 105, 0.02) 100%);
-  border-color: rgba(5, 150, 105, 0.3);
+  border-left-color: var(--color-match);
 }
 
 .banner-warning {
-  background: linear-gradient(90deg, rgba(217, 119, 6, 0.10) 0%, rgba(217, 119, 6, 0.02) 100%);
-  border-color: rgba(217, 119, 6, 0.3);
+  border-left-color: var(--color-mismatch);
 }
 
 .banner-icon-col {
@@ -489,18 +489,18 @@ body {
 }
 
 .pill-success {
-  background: var(--color-match);
-  color: #ffffff;
+  background: rgba(5, 150, 105, 0.12);
+  color: #047857;
 }
 
 .pill-warning {
-  background: var(--color-mismatch);
-  color: #ffffff;
+  background: rgba(217, 119, 6, 0.14);
+  color: #92400e;
 }
 
 .pill-retry {
-  background: #a855f7;
-  color: #ffffff;
+  background: rgba(168, 85, 247, 0.14);
+  color: #7e22ce;
 }
 
 .banner-description {
@@ -594,9 +594,17 @@ body {
 }
 
 .nav-logo {
-  font-weight: 800;
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
   color: var(--text-primary);
+}
+
+.nav-logo-page {
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .prompt-preview-pill {
@@ -1338,7 +1346,13 @@ body {
 }
 
 .a11y-panel-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.a11y-panel-icon-clean {
+  color: #059669;
 }
 
 .a11y-panel-header h3,
