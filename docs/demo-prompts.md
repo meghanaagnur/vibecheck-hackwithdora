@@ -1,4 +1,4 @@
-# Demo prompts (validate Day 2, hours 40–44)
+# Demo prompts (validate before recording the demo video)
 
 Precise specs (exact hex, exact px) reliably produce real mismatches — AI code-gen is
 good at rough layout, bad at exact values. That gap is the product's reason to exist.
@@ -50,4 +50,5 @@ and an image, exact color + exact spacing)
 ## Selected for demo
 
 _Fill in once validated — this is the prompt used for both the live "watch it work" flex
-and the pre-generated fallback gallery (`/fixtures/demo-gallery`)._
+and the pre-generated fallback gallery (`frontend/src/lib/sampleFixtures.js` /
+`fixtures/demo-gallery`)._
