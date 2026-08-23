@@ -184,29 +184,6 @@ export default function LandingPage({ onTryItClick }) {
         </p>
       </section>
 
-      <section className="landing-section">
-        <span className="landing-section-eyebrow">Not another visual regression tool</span>
-        <h2 className="landing-section-title">
-          We check against your prompt, not your last commit.
-        </h2>
-        <div className="diff-compare-grid">
-          <div className="diff-compare-card">
-            <h3>Percy / Chromatic / Applitools</h3>
-            <p>
-              "Does the UI look the same as last time?" Regression testing against a
-              previous screenshot.
-            </p>
-          </div>
-          <div className="diff-compare-card diff-compare-highlight">
-            <h3>VibeCheck</h3>
-            <p>
-              "Does the UI match what I actually asked for?" Spec conformance testing
-              against the prompt, not a previous run.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="landing-section" id="roadmap">
         <span className="landing-section-eyebrow">What's next</span>
         <h2 className="landing-section-title">From one manual check to full workflow coverage</h2>
