@@ -7,16 +7,16 @@
   },
   "results": [
     {
-      "elementId": "el-0",
-      "matchedExtractionId": "dom-1",
+      "elementId": "el0",
+      "matchedExtractionId": "dom1",
       "verdict": "match",
       "checks": [],
       "boundingBox": { "x": 240, "y": 120, "width": 300, "height": 40 },
       "note": "Matches spec."
     },
     {
-      "elementId": "el-1",
-      "matchedExtractionId": "dom-2",
+      "elementId": "el1",
+      "matchedExtractionId": "dom2",
       "verdict": "position_mismatch",
       "checks": [
         { "field": "backgroundColor", "expected": "#2563EB", "actual": "#2563eb", "pass": true },

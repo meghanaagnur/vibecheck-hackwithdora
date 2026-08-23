@@ -72,9 +72,9 @@ export default function UploadPage({ onCheckSuccess, initialValues = {} }) {
     <div className="upload-page">
       <header className="page-header">
         <div className="brand-badge">VibeCheck</div>
-        <h1 className="main-title">Check the Vibes of Your AI-Generated UI</h1>
+        <h1 className="main-title">Check the Vibes of Your AI Generated UI</h1>
         <p className="subtitle">
-          Diff the rendered reality against your prompt specification. Pinpoint pixel-exact
+          Diff the rendered reality against your prompt specification. Pinpoint pixel exact
           color, position, and sizing mismatches directly on the rendered output.
         </p>
       </header>

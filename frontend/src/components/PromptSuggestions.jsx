@@ -11,7 +11,7 @@ export default function PromptSuggestions({ suggestions = [] }) {
         <h3>Sharpen your prompt</h3>
       </div>
       <p className="prompt-suggestions-lede">
-        Your prompt left these under-specified — add them next time to get it right on
+        Your prompt left these unspecified. Add them next time to get it right on
         the first try:
       </p>
       <ul className="prompt-suggestions-list">

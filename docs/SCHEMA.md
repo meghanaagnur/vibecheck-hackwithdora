@@ -29,7 +29,7 @@ extraction gets diffed against.
   "sourcePrompt": "email input, password input, blue submit button 24px below input",
   "elements": [
     {
-      "id": "el-1",                     // stable id, referenced by diff.json
+      "id": "el1",                     // stable id, referenced by diff.json
       "type": "button",                 // button | input | text | image | heading | container | link
       "role": "submit",                 // free-text semantic hint, optional
       "expected": {
@@ -37,7 +37,7 @@ extraction gets diffed against.
         "color": "#2563EB",             // optional hex, foreground/fill color
         "backgroundColor": "#2563EB",   // optional hex
         "position": {                   // optional — any sub-field may be omitted
-          "relativeTo": "el-0",         // id of another element, or "viewport"
+          "relativeTo": "el0",         // id of another element, or "viewport"
           "direction": "below",         // above | below | left-of | right-of | inside
           "offsetPx": 24
         },
@@ -73,7 +73,7 @@ and reading `boundingClientRect` + `getComputedStyle` per element.
   "viewport": { "width": 1280, "height": 800 },
   "elements": [
     {
-      "id": "dom-1",                    // Aalok's own id, NOT the checklist id
+      "id": "dom1",                    // Aalok's own id, NOT the checklist id
       "tag": "button",
       "text": "Sign in",
       "boundingBox": {                  // raw boundingClientRect, px, viewport-relative
@@ -96,7 +96,7 @@ and reading `boundingClientRect` + `getComputedStyle` per element.
 ```
 
 Rules:
-- `elements[].id` is Aalok's own DOM-assigned id (e.g. `dom-1`, `dom-2`, ...) — it does
+- `elements[].id` is Aalok's own DOM-assigned id (e.g. `dom1`, `dom2`, ...) — it does
   **not** need to match checklist ids. Matching checklist elements to extraction elements
   (by tag + text + position proximity) is diff-engine responsibility, not extraction
   responsibility. Keep extraction dumb: measure everything, decide nothing.
@@ -123,8 +123,8 @@ screen — it should never have to look at checklist.json or extraction.json dir
   },
   "results": [
     {
-      "elementId": "el-1",              // checklist element id — join key
-      "matchedExtractionId": "dom-1",   // extraction element id, or null if MISSING
+      "elementId": "el1",              // checklist element id — join key
+      "matchedExtractionId": "dom1",   // extraction element id, or null if MISSING
       "verdict": "match",               // match | position_mismatch | style_mismatch | missing
       "checks": [                       // per-field detail, only for fields checklist spec'd
         { "field": "backgroundColor", "expected": "#2563EB", "actual": "#2563eb", "pass": true },
@@ -140,7 +140,7 @@ screen — it should never have to look at checklist.json or extraction.json dir
     "resultAfterRetry": { "totalChecked": 4, "mismatches": 1 }
   },
   "promptSuggestions": [                // optional — plain-English prompt-rewrite hints
-    "For \"el-1\": specify the exact spacing as 24px."
+    "For \"el1\": specify the exact spacing as 24px."
   ]
 }
 ```

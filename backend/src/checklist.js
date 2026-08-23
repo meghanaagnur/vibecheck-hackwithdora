@@ -16,7 +16,7 @@ Your job is to convert a natural language UI prompt into a structured JSON check
   "sourcePrompt": "<exact source prompt>",
   "elements": [
     {
-      "id": "el-0",
+      "id": "el0",
       "type": "input", // allowed values: "button" | "input" | "text" | "image" | "heading" | "container" | "link"
       "role": "email", // free-text semantic hint or null if not applicable (e.g. "email", "password", "submit", "header", "title")
       "expected": {
@@ -24,7 +24,7 @@ Your job is to convert a natural language UI prompt into a structured JSON check
         "color": null, // foreground text color in 6-digit hex format (e.g. "#FFFFFF") or null
         "backgroundColor": null, // background color in 6-digit hex format (e.g. "#2563EB") or null
         "position": { // or null if no positioning is specified
-          "relativeTo": "el-0", // id of another element (e.g. "el-0"), "viewport", or null
+          "relativeTo": "el0", // id of another element (e.g. "el0"), "viewport", or null
           "direction": "below", // "above" | "below" | "left-of" | "right-of" | "inside" | null
           "offsetPx": 24 // integer pixel offset or null
         },
@@ -39,10 +39,10 @@ Your job is to convert a natural language UI prompt into a structured JSON check
 }
 
 Rules:
-1. Every element MUST have a unique "id" starting from "el-0", "el-1", "el-2", etc.
+1. Every element MUST have a unique "id" starting from "el0", "el1", "el2", etc.
 2. Only include expected attributes if the prompt explicitly or strongly implies them. If a field was NOT specified in the prompt, set it to null.
 3. Colors MUST be 6-digit hex strings (e.g. "#2563EB", "#FFFFFF", "#000000").
-4. "position.relativeTo" must reference a preceding element id (e.g. "el-0") or "viewport".
+4. "position.relativeTo" must reference a preceding element id (e.g. "el0") or "viewport".
 5. Return ONLY valid JSON matching this schema.`;
 
 /**
@@ -56,7 +56,7 @@ function generateFallbackChecklist(prompt) {
 
   if (normalized.includes("email") || normalized.includes("login")) {
     elements.push({
-      id: `el-${idCounter++}`,
+      id: `el${idCounter++}`,
       type: "input",
       role: "email",
       expected: {
@@ -72,7 +72,7 @@ function generateFallbackChecklist(prompt) {
 
   if (normalized.includes("password") || normalized.includes("login")) {
     elements.push({
-      id: `el-${idCounter++}`,
+      id: `el${idCounter++}`,
       type: "input",
       role: "password",
       expected: {
@@ -96,7 +96,7 @@ function generateFallbackChecklist(prompt) {
     const prevId = elements.length > 0 ? elements[elements.length - 1].id : null;
 
     elements.push({
-      id: `el-${idCounter++}`,
+      id: `el${idCounter++}`,
       type: "button",
       role: "submit",
       expected: {
@@ -120,7 +120,7 @@ function generateFallbackChecklist(prompt) {
   // If nothing matched, provide at least one generic container or element
   if (elements.length === 0) {
     elements.push({
-      id: `el-${idCounter++}`,
+      id: `el${idCounter++}`,
       type: "container",
       role: "main",
       expected: {
@@ -153,7 +153,7 @@ function normalizeChecklist(data, sourcePrompt) {
   const elements = Array.isArray(data.elements) ? data.elements : [];
 
   const normalizedElements = elements.map((el, index) => {
-    const id = el.id || `el-${index}`;
+    const id = el.id || `el${index}`;
     const type = ["button", "input", "text", "image", "heading", "container", "link"].includes(el.type)
       ? el.type
       : "container";

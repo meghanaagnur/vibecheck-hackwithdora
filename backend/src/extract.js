@@ -160,7 +160,7 @@ export async function extract(htmlOrPath, options = {}) {
         const bgHex = rgbToHex(style.backgroundColor);
 
         extracted.push({
-          id: `dom-${elementIndex++}`,
+          id: `dom${elementIndex++}`,
           tag: tag.toLowerCase(),
           text,
           boundingBox: {

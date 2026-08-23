@@ -15,13 +15,13 @@ const REVIEWS = [
   },
   {
     quote:
-      "The prompt suggestions are the best part — it doesn't just fix the code, it tells you what you forgot to say in the first place.",
+      "The prompt suggestions are the best part: it doesn't just fix the code, it tells you what you forgot to say in the first place.",
     name: "S.",
     role: "Frontend dev (beta tester)",
   },
   {
     quote:
-      "Finally a way to sanity-check AI-generated UI without eyeballing a diff of pixels for ten minutes.",
+      "Finally a way to sanity check AI generated UI without eyeballing a diff of pixels for ten minutes.",
     name: "A.",
     role: "Hackathon judge (beta tester)",
   },
@@ -59,13 +59,13 @@ export default function LandingPage({ onTryItClick }) {
           Ship UIs that <span className="text-accent">actually</span> match the vibes.
         </h1>
         <p className="landing-subheadline">
-          Everyone in this room just vibe-coded their project. VibeCheck checks whether
+          Everyone in this room just vibe coded their project. VibeCheck checks whether
           the vibes actually rendered correctly.
         </p>
         <p className="landing-lede">
-          AI code-gen is great at rough layout and terrible at exact values. VibeCheck
-          diffs what you asked for against what actually rendered — pixel-exact color,
-          position, and sizing — and shows you the mismatch directly on the screenshot,
+          AI code generation is great at rough layout and terrible at exact values. VibeCheck
+          diffs what you asked for against what actually rendered: pixel exact color,
+          position, and sizing, and shows you the mismatch directly on the screenshot,
           not buried in a JSON dump.
         </p>
         <div className="landing-cta-row">
@@ -91,16 +91,16 @@ export default function LandingPage({ onTryItClick }) {
           <div className="landing-mockup-body">
             <div className="landing-mockup-panel">
               <div className="landing-mockup-row match">
-                <span className="verdict-dot" /> el-0 · email input — matches spec
+                <span className="verdict-dot" /> el0 · email input · matches spec
               </div>
               <div className="landing-mockup-row match">
-                <span className="verdict-dot" /> el-1 · password input — matches spec
+                <span className="verdict-dot" /> el1 · password input · matches spec
               </div>
               <div className="landing-mockup-row mismatch">
-                <span className="verdict-dot" /> el-2 · submit button — 17px off spec
+                <span className="verdict-dot" /> el2 · submit button · 17px off spec
               </div>
               <div className="landing-mockup-row missing">
-                <span className="verdict-dot" /> el-3 · "Forgot password?" — missing
+                <span className="verdict-dot" /> el3 · "Forgot password?" · missing
               </div>
             </div>
             <div className="landing-mockup-panel">
@@ -125,12 +125,12 @@ export default function LandingPage({ onTryItClick }) {
           <div className="how-step">
             <span className="how-step-num">1</span>
             <h3>Prompt</h3>
-            <p>Describe the UI you want — be specific about colors, spacing, alignment.</p>
+            <p>Describe the UI you want. Be specific about colors, spacing, alignment.</p>
           </div>
           <div className="how-step">
             <span className="how-step-num">2</span>
             <h3>AI generates code</h3>
-            <p>One agent call turns the prompt into HTML/React — or paste your own code.</p>
+            <p>One agent call turns the prompt into HTML/React, or paste your own code.</p>
           </div>
           <div className="how-step">
             <span className="how-step-num">3</span>
@@ -140,7 +140,7 @@ export default function LandingPage({ onTryItClick }) {
           <div className="how-step">
             <span className="how-step-num">4</span>
             <h3>Diff, shown on screen</h3>
-            <p>Red/yellow/green overlay directly on the screenshot — see the bug, not a log.</p>
+            <p>Red/yellow/green overlay directly on the screenshot. See the bug, not a log.</p>
           </div>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function LandingPage({ onTryItClick }) {
         <div className="landing-testimonial">
           <blockquote>
             "It doesn't just fix the code, it tells you what you forgot to say in the
-            first place — that's the part that actually changes how I write prompts."
+            first place, and that's the part that actually changes how I write prompts."
           </blockquote>
           <div className="landing-testimonial-author">
             <span className="landing-testimonial-avatar" aria-hidden="true">S.</span>
@@ -180,7 +180,7 @@ export default function LandingPage({ onTryItClick }) {
           ))}
         </div>
         <p className="review-disclaimer">
-          Early placeholder feedback from hackathon testers — real reviews coming post-launch.
+          Early placeholder feedback from hackathon testers. Real reviews coming post launch.
         </p>
       </section>
 
@@ -193,14 +193,14 @@ export default function LandingPage({ onTryItClick }) {
           <div className="diff-compare-card">
             <h3>Percy / Chromatic / Applitools</h3>
             <p>
-              "Does the UI look the same as last time?" — regression testing against a
+              "Does the UI look the same as last time?" Regression testing against a
               previous screenshot.
             </p>
           </div>
           <div className="diff-compare-card diff-compare-highlight">
             <h3>VibeCheck</h3>
             <p>
-              "Does the UI match what I actually asked for?" — spec conformance testing
+              "Does the UI match what I actually asked for?" Spec conformance testing
               against the prompt, not a previous run.
             </p>
           </div>
@@ -212,16 +212,16 @@ export default function LandingPage({ onTryItClick }) {
         <h2 className="landing-section-title">From one manual check to full workflow coverage</h2>
         <ul className="roadmap-list">
           <li>
-            <strong>Today — manual, web-based:</strong> paste a prompt/code pair, get a
-            diff, prompt coaching, and one AI-assisted fix, all in the browser.
+            <strong>Today, manual and web based:</strong> paste a prompt/code pair, get a
+            diff, prompt coaching, and one AI assisted fix, all in the browser.
           </li>
           <li>
-            <strong>Next — IDE integration:</strong> inline prompt coaching while you're
+            <strong>Next, IDE integration:</strong> inline prompt coaching while you're
             still writing the prompt, not after you've already generated code.
           </li>
           <li>
-            <strong>Later — CI integration:</strong> auto re-check on every commit, once
-            there's a stored baseline to run continuously against — the same retry loop,
+            <strong>Later, CI integration:</strong> auto recheck on every commit, once
+            there's a stored baseline to run continuously against, the same retry loop,
             wired into your pipeline.
           </li>
           <li>
@@ -277,7 +277,7 @@ export default function LandingPage({ onTryItClick }) {
           </div>
         </div>
         <div className="landing-footer-bottom">
-          Built at Hack With Dora 2.0 — a developer tool for checking whether vibe-coded
+          Built at Hack With Dora 2.0. A developer tool for checking whether vibe coded
           UI actually matches the spec.
         </div>
         <div className="landing-footer-watermark" aria-hidden="true">VibeCheck</div>

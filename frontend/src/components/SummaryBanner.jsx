@@ -29,7 +29,7 @@ export default function SummaryBanner({ summary, retry }) {
       <div className="banner-content-col">
         <div className="banner-headline-row">
           <span className="banner-title">
-            {isMatch ? "Vibes Verified — All Elements Match" : "Visual Mismatches Detected"}
+            {isMatch ? "Vibes Verified: All Elements Match" : "Visual Mismatches Detected"}
           </span>
           <span className={`status-pill ${isMatch ? "pill-success" : "pill-warning"}`}>
             {summary.status.toUpperCase()}
@@ -44,7 +44,7 @@ export default function SummaryBanner({ summary, retry }) {
         <div className="banner-description">
           <strong>{summary.totalChecked}</strong> elements checked,{" "}
           <strong>{summary.mismatches}</strong> {summary.mismatches === 1 ? "mismatch" : "mismatches"} found
-          {retryDiffNote && <span className="retry-highlight"> — ✨ {retryDiffNote}</span>}.
+          {retryDiffNote && <span className="retry-highlight"> · ✨ {retryDiffNote}</span>}.
         </div>
       </div>
 

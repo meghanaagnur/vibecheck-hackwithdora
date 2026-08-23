@@ -89,10 +89,10 @@ export default function ResultsPage({
             >
               {retrying ? (
                 <span className="loading-spinner-wrap">
-                  <span className="spinner"></span> AI Regenerating (1-Pass Retry)...
+                  <span className="spinner"></span> AI Regenerating (Single Pass Retry)...
                 </span>
               ) : (
-                "✨ Run AI Fix (1-Pass Retry)"
+                "✨ Run AI Fix (Single Pass Retry)"
               )}
             </button>
           )}

@@ -4,7 +4,7 @@ const DEMO_GALLERY_ITEMS = [
   {
     id: "demo-login-offset",
     title: "Login Form (Offset Mismatch)",
-    description: "Submit button is left-aligned and has wrong gap; 1 element missing.",
+    description: "Submit button is aligned left and has wrong gap; 1 element missing.",
     mismatches: 2,
     total: 4,
     diff: SAMPLE_DIFF,
@@ -24,7 +24,7 @@ export default function FallbackGallery({ onSelect }) {
     <div className="fallback-gallery">
       <div className="gallery-header">
         <span className="gallery-icon">📁</span>
-        <h4>Pre-validated Demo Fixtures</h4>
+        <h4>Validated Demo Fixtures</h4>
       </div>
       <div className="gallery-grid">
         {DEMO_GALLERY_ITEMS.map((item) => (

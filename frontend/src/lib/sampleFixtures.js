@@ -37,8 +37,8 @@ export const SAMPLE_DIFF = {
   sourcePrompt: "Login page with an email input and a password input stacked vertically, 16px gap between them. Below the password input, a submit button: background #2563EB, white text 'Sign in', 120px wide, 40px tall, centered horizontally, 24px below the password input.",
   results: [
     {
-      elementId: "el-0",
-      matchedExtractionId: "dom-1",
+      elementId: "el0",
+      matchedExtractionId: "dom1",
       verdict: "match",
       checks: [
         { field: "type", expected: "input", actual: "input", pass: true },
@@ -48,8 +48,8 @@ export const SAMPLE_DIFF = {
       note: "Email input matches specification."
     },
     {
-      elementId: "el-1",
-      matchedExtractionId: "dom-2",
+      elementId: "el1",
+      matchedExtractionId: "dom2",
       verdict: "match",
       checks: [
         { field: "type", expected: "input", actual: "input", pass: true }
@@ -58,8 +58,8 @@ export const SAMPLE_DIFF = {
       note: "Password input matches specification."
     },
     {
-      elementId: "el-2",
-      matchedExtractionId: "dom-3",
+      elementId: "el2",
+      matchedExtractionId: "dom3",
       verdict: "position_mismatch",
       checks: [
         { field: "backgroundColor", expected: "#2563EB", actual: "#2563eb", pass: true },
@@ -67,14 +67,14 @@ export const SAMPLE_DIFF = {
         { field: "position.offsetPx", expected: 24, actual: 24, pass: false, deltaPx: 0 }
       ],
       boundingBox: { x: 240, y: 250, width: 120, height: 40 },
-      note: "Button is left-aligned instead of centered horizontally."
+      note: "Button is aligned left instead of centered horizontally."
     },
     {
-      elementId: "el-3",
+      elementId: "el3",
       matchedExtractionId: null,
       verdict: "missing",
       checks: [
-        { field: "role", expected: "forgot-password-link", actual: null, pass: false }
+        { field: "role", expected: "forgot password link", actual: null, pass: false }
       ],
       boundingBox: null,
       note: "Expected 'Forgot password?' link is missing from DOM extraction."
@@ -91,24 +91,24 @@ export const SAMPLE_RETRY_DIFF = {
   ...SAMPLE_DIFF,
   results: [
     {
-      elementId: "el-0",
-      matchedExtractionId: "dom-1",
+      elementId: "el0",
+      matchedExtractionId: "dom1",
       verdict: "match",
       checks: [{ field: "type", expected: "input", actual: "input", pass: true }],
       boundingBox: { x: 240, y: 130, width: 320, height: 40 },
       note: "Email input matches specification."
     },
     {
-      elementId: "el-1",
-      matchedExtractionId: "dom-2",
+      elementId: "el1",
+      matchedExtractionId: "dom2",
       verdict: "match",
       checks: [{ field: "type", expected: "input", actual: "input", pass: true }],
       boundingBox: { x: 240, y: 186, width: 320, height: 40 },
       note: "Password input matches specification."
     },
     {
-      elementId: "el-2",
-      matchedExtractionId: "dom-3",
+      elementId: "el2",
+      matchedExtractionId: "dom3",
       verdict: "match",
       checks: [
         { field: "backgroundColor", expected: "#2563EB", actual: "#2563eb", pass: true },
