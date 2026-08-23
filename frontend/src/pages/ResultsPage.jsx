@@ -69,9 +69,35 @@ export default function ResultsPage({
     <div className="results-page">
       {/* Top Navigation Bar */}
       <nav className="results-nav-bar">
-        <button className="btn-back" onClick={onStartOver}>
-          ← Start New Check
-        </button>
+        <div className="results-nav-top">
+          <button className="btn-back" onClick={onStartOver}>
+            ← Start New Check
+          </button>
+
+          <div className="nav-actions">
+            {hasMismatches && !hasRetry && (
+              <button
+                className="btn btn-retry"
+                onClick={handleRetry}
+                disabled={retrying}
+              >
+                {retrying ? (
+                  <span className="loading-spinner-wrap">
+                    <span className="spinner"></span> AI Regenerating (Single Pass Retry)...
+                  </span>
+                ) : (
+                  "Run AI Fix (Single Pass Retry)"
+                )}
+              </button>
+            )}
+
+            {hasRetry && (
+              <span className="retry-status-badge">
+                ✓ Single Retry Pass Applied
+              </span>
+            )}
+          </div>
+        </div>
 
         <div className="nav-title-group">
           <span className="nav-logo">
@@ -80,30 +106,6 @@ export default function ResultsPage({
           {submissionContext.prompt && (
             <span className="prompt-preview-pill" title={submissionContext.prompt}>
               Spec: "{submissionContext.prompt.slice(0, 45)}..."
-            </span>
-          )}
-        </div>
-
-        <div className="nav-actions">
-          {hasMismatches && !hasRetry && (
-            <button
-              className="btn btn-retry"
-              onClick={handleRetry}
-              disabled={retrying}
-            >
-              {retrying ? (
-                <span className="loading-spinner-wrap">
-                  <span className="spinner"></span> AI Regenerating (Single Pass Retry)...
-                </span>
-              ) : (
-                "Run AI Fix (Single Pass Retry)"
-              )}
-            </button>
-          )}
-
-          {hasRetry && (
-            <span className="retry-status-badge">
-              ✓ Single Retry Pass Applied
             </span>
           )}
         </div>

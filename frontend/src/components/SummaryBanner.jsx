@@ -31,12 +31,9 @@ export default function SummaryBanner({ summary, retry }) {
           <span className="banner-title">
             {isMatch ? "Vibes Verified: All Elements Match" : "Visual Mismatches Detected"}
           </span>
-          <span className={`status-pill ${isMatch ? "pill-success" : "pill-warning"}`}>
-            {summary.status.toUpperCase()}
-          </span>
           {retry?.attempted && (
             <span className="status-pill pill-retry">
-              RETRY PASS
+              Retry pass
             </span>
           )}
         </div>

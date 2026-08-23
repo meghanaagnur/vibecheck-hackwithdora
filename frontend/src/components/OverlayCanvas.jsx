@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 // Verdict color and metadata mapping per docs/SCHEMA.md
 export const VERDICT_CONFIG = {
@@ -44,6 +44,33 @@ export default function OverlayCanvas({
   onHoverElement,
 }) {
   const [activeTooltipId, setActiveTooltipId] = useState(null);
+  const imgRef = useRef(null);
+  // Screenshots are captured at their real render viewport size, but the <img>
+  // is displayed scaled down (max-width: 100%) to fit its container — so overlay
+  // boxes must be scaled by the same ratio, or they drift away from the actual
+  // elements the moment the image renders smaller than its native size.
+  const [scale, setScale] = useState({ x: 1, y: 1 });
+
+  const recomputeScale = useCallback(() => {
+    const img = imgRef.current;
+    if (!img || !img.naturalWidth || !img.naturalHeight) return;
+    setScale({
+      x: img.clientWidth / img.naturalWidth,
+      y: img.clientHeight / img.naturalHeight,
+    });
+  }, []);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) return;
+
+    // Image may already be loaded (cached data: URIs resolve near-instantly).
+    if (img.complete) recomputeScale();
+
+    const resizeObserver = new ResizeObserver(recomputeScale);
+    resizeObserver.observe(img);
+    return () => resizeObserver.disconnect();
+  }, [screenshot, recomputeScale]);
 
   // Separate results into positioned boxes vs elements missing bounding boxes
   const positionedResults = results.filter(
@@ -67,6 +94,12 @@ export default function OverlayCanvas({
     !screenshot ||
     screenshot.includes("PLACEHOLDER") ||
     screenshot.trim() === "";
+
+  // The mockup-canvas-bg placeholder renders at its native pixel size (no CSS
+  // shrink-to-fit), so its coordinates never need scaling — only the real <img>
+  // (which does shrink to fit its container) does.
+  const scaleX = isPlaceholderScreenshot ? 1 : scale.x;
+  const scaleY = isPlaceholderScreenshot ? 1 : scale.y;
 
   return (
     <div className="overlay-canvas-wrapper">
@@ -94,9 +127,11 @@ export default function OverlayCanvas({
           </div>
         ) : (
           <img
+            ref={imgRef}
             src={screenshot}
             alt="Rendered output"
             className="screenshot-img"
+            onLoad={recomputeScale}
           />
         )}
 
@@ -117,10 +152,10 @@ export default function OverlayCanvas({
               }`}
               style={{
                 position: "absolute",
-                left: `${x}px`,
-                top: `${y}px`,
-                width: `${Math.max(width, 16)}px`,
-                height: `${Math.max(height, 16)}px`,
+                left: `${x * scaleX}px`,
+                top: `${y * scaleY}px`,
+                width: `${Math.max(width * scaleX, 16)}px`,
+                height: `${Math.max(height * scaleY, 16)}px`,
                 border: config.border,
                 backgroundColor: config.bg,
                 zIndex: isHovered ? 20 : 5,
@@ -215,7 +250,7 @@ export default function OverlayCanvas({
       {unpositionedResults.length > 0 && (
         <div className="missing-elements-panel">
           <div className="missing-title">
-            <span className="missing-icon">❌</span>
+            <span className="missing-icon">✕</span>
             <strong>Missing from Rendered DOM ({unpositionedResults.length})</strong>
           </div>
           <ul className="missing-list">
